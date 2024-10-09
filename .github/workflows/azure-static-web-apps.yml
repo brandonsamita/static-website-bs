@@ -2,7 +2,7 @@ name: Deploy Static Website to Azure
 
  
 
-on: 
+on:
 
   push: 
 
