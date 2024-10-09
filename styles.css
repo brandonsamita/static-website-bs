@@ -4,58 +4,48 @@ body {
     margin: 0;
     padding: 0;
     background-color: #1a1a1a; /* Dark background for a hellish vibe */
-    color: #f1c40f; /* Bright yellow text */
+    color: #ffcc00; /* Fiery yellow text */
     overflow-x: hidden; /* Prevent horizontal scroll */
+    line-height: 1.6;
 }
 
-/* Smooth scrolling for a luxurious experience */
+/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
 /* Header styles */
 header {
-    background: url('images/fire-background.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-color: #660000; /* Deep red background */
     position: relative;
     height: 100vh;
-    color: #ff4500; /* Fiery red color for text */
+    color: #ff4500; /* Fiery red text */
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'Creepster', cursive; /* Fiery themed cursive font */
+    font-family: 'Creepster', cursive; /* Cursive font for a creepy vibe */
     z-index: 1;
+    animation: flicker 2s infinite; /* Add a flickering effect */
 }
 
-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better contrast */
-    z-index: -1;
-}
-
-/* Add flame animations to the header */
-@keyframes flames {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+/* Header flickering animation */
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+    80% { opacity: 0.95; }
 }
 
 h1 {
     font-size: 5em;
-    text-shadow: 0 0 20px rgba(255, 69, 0, 0.8); /* Glowing fiery shadow */
+    color: #ffcc00; /* Glowing yellow */
+    text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff4500; /* Fiery glow */
     margin: 0;
     padding: 0;
-    animation: flames 1s infinite; /* Flame-like animation */
 }
 
 .header-btn {
-    background-color: #ff4500; /* Fiery red button */
+    background-color: #ff4500; /* Bright red button */
     border: none;
     color: white;
     padding: 15px 30px;
@@ -67,20 +57,18 @@ h1 {
     transition: all 0.4s ease;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 15px rgba(255, 69, 0, 0.6);
 }
 
 .header-btn:hover {
-    background-color: #e03e31; /* Darker fiery red on hover */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+    background-color: #e03e31; /* Darker red on hover */
+    box-shadow: 0 12px 25px rgba(255, 69, 0, 0.7);
     transform: translateY(-5px);
 }
 
-/* Fiery parallax effect section */
+/* Fiery parallax section */
 .parallax-section {
-    background: url('images/lava-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
+    background-color: #330000; /* Deep dark red */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -89,16 +77,17 @@ h1 {
     text-align: center;
     font-size: 2em;
     padding: 50px;
+    position: relative;
 }
 
-.parallax-section::after {
+.parallax-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, rgba(255, 69, 0, 0.8), rgba(0, 0, 0, 0.6));
     z-index: -1;
 }
 
@@ -111,7 +100,7 @@ h1 {
 }
 
 .card {
-    background-color: #333; /* Dark background for cards */
+    background-color: #660000; /* Dark red */
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(255, 69, 0, 0.7);
     overflow: hidden;
@@ -126,13 +115,6 @@ h1 {
     box-shadow: 0 12px 25px rgba(255, 69, 0, 0.9);
 }
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    filter: brightness(0.8); /* Darken images for a fiery effect */
-}
-
 .card-content {
     padding: 20px;
 }
@@ -140,33 +122,52 @@ h1 {
 .card-title {
     font-size: 1.8em;
     margin: 0 0 10px;
-    font-family: 'Creepster', cursive; /* Fiery themed cursive font */
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ff4500; /* Fiery glow effect */
+    font-family: 'Creepster', cursive;
 }
 
 .card-text {
     font-size: 1.1em;
     line-height: 1.6;
+    color: #fff;
 }
 
-/* Footer with fire-themed background */
+/* Footer with fiery colors */
 footer {
-    background: url('images/fire-waves.png') repeat-x bottom; /* Fire-themed footer */
-    background-color: #660000; /* Darker red for footer */
-    color: white;
+    background-color: #330000; /* Dark red */
+    color: #ffcc00; /* Bright yellow */
     text-align: center;
     padding: 40px;
     font-family: 'Creepster', cursive;
     position: relative;
 }
 
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(45deg, rgba(255, 69, 0, 0.8), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+}
+
+/* Add glowing border to footer */
 footer::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px;
-    background: url('images/flame-animation.gif') repeat-x; /* Animated flame gif */
-    z-index: -1;
+    height: 5px;
+    background: linear-gradient(to right, #ff4500, #ffcc00, #ff4500);
+    animation: glow 2s infinite;
 }
 
+/* Glowing animation for footer */
+@keyframes glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
